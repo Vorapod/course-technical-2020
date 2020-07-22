@@ -5,7 +5,12 @@ services:
     image: toonhudsha/app:1.1.1
     ports:
       - "4000:4000"
-      
+  mongo:
+    image: mongo:4.2.8
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_INITDB_DATABASE=mydb
 # docper-compose build    = build image
 # docper-compose up       = Foreground process
 # docper-compose up -d    = Background process
